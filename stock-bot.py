@@ -109,7 +109,7 @@ class watcher():
     def should_stock_be_sold(self):
         if get_num_day_trades() > 2 and has_been_recently_traded(self.ticker):
             return False
-        return self.price / get_recent_price(self.ticker) > 1.02
+        return self.price / get_recent_price(self.ticker) < 0.98
     
     def buy_stock(self):
         # robin.orders.order_buy_market(self.ticker, 1)
